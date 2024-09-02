@@ -142,7 +142,17 @@ const AddCaption = () => {
 
                 </div>
                 <div style={{display:'flex'}}>
-                    <button>Download</button>
+                    <button
+                    onClick={
+                        () => {
+                            const dataUrl = canvasRef.current.toDataURL();
+                            const a = document.createElement('a');
+                            a.href = dataUrl;
+                            a.download = 'image.png';
+                            a.click();
+                        }
+                    }
+                    >Download</button>
                 </div>
             </div>
         </div>
