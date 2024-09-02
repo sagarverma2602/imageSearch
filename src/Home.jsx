@@ -19,7 +19,7 @@ const Home = () => {
             <div style={{display:'flex',justifyContent:'center'}}>
                 <input type='search' placeholder='Search' val={searchText} onChange={(e)=>{setSearchText(e.target.value)}}/>
                 <input type='button' value='Search' onClick={handleSearch}/>
-            {images.length!==0 && <button onClick={()=>{setPage((prev)=>prev+1);}}>Next</button>}
+            {images && images.length!==0 && <button onClick={()=>{setPage((prev)=>prev+1);}}>Next</button>}
             </div>
             <div style={{display
             :'flex', flexWrap:'wrap', justifyContent:'center' 
